@@ -1,7 +1,7 @@
 ﻿using System;
 using TicTacToeGroup13;
 //Make new instance of supporting class
-//Supporting sup = new Supporting(); (Remove comments on this line when ready)
+Supporting sup = new Supporting();
 
 class Program
 {
