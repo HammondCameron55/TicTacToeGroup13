@@ -1,14 +1,15 @@
 ﻿using System;
 using TicTacToeGroup13;
 //Make new instance of supporting class
-//Supporting sup = new Supporting(); (Remove comments on this line when ready)
+Supporting sup = new Supporting();
 
-class Program
-{
-    static char[,] gameBoard = new char[3, 3]; // 3x3 game board
+char[,] gameBoard = new char[3, 3]; // 3x3 game board
 
-    static void Main(string[] args)
+
+static void Main(string[] args)
     {
+        
+
         bool gameOver = false;
 
         // welcome user to the game
@@ -80,5 +81,5 @@ class Program
         {
             gameBoard[across, down] = currentPlayer;
         }
-    }
+    
 
