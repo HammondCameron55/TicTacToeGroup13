@@ -26,12 +26,13 @@ class TicTacToeGame
         while (!gameOver)
         {
             Console.WriteLine("Current Player: " + currentPlayer);
+            sup.GameBoardPrint(gameBoard);
             GetPlayerChoice(currentPlayer);
 
             
             
 
-            sup.GameBoardPrint(gameBoard); // Assuming gameBoardPrint method takes gameBoard as an argument
+            //sup.GameBoardPrint(gameBoard); // Assuming gameBoardPrint method takes gameBoard as an argument
 
             gameOver = sup.CheckWinner(gameBoard); // Assuming checkWinner method takes gameBoard as an argument
 
@@ -39,6 +40,7 @@ class TicTacToeGame
             {
                 gameOver = true;
                 Console.WriteLine($"Player {currentPlayer} wins!");
+                sup.GameBoardPrint(gameBoard );
             }
             else
             {
@@ -75,9 +77,9 @@ class TicTacToeGame
                 if (userInput.Length == 1 && int.TryParse(userInput, out int n2) && int.Parse(userInput) <= 2) {
                     down = int.Parse(userInput);
 
-                    if (gameBoard[across, down] == ' ')
+                    if (gameBoard[down, across] == ' ')
                     {
-                        gameBoard[across, down] = currentPlayer;
+                        gameBoard[down, across] = currentPlayer;
                         validInput = true;
                     }
                     else
@@ -87,7 +89,7 @@ class TicTacToeGame
                 } 
                 else
                 {
-                    Console.WriteLine("Invalid Input! Please enter a single digit between 1 and 2");
+                    Console.WriteLine("Invalid Input! Please enter a single digit: 0, 1, 2");
                 }
             }
             else 

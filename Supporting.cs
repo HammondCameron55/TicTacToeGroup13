@@ -12,10 +12,12 @@ namespace TicTacToeGroup13
             {
                 for (int col = 0; col < 3; col++)
                 {
-                    Console.Write(gameBoard[row, col] + " ");
+                    Console.Write($" {gameBoard[row, col]} ");
+                    if (col < 2) Console.Write("|");
                 }
-                Console.WriteLine();
+                if (row < 2) Console.WriteLine("\n---|---|---");
             }
+            Console.WriteLine("");
         }
 
         // Method to receive game board array as input and return if there was a winner
