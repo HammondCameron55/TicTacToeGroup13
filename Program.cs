@@ -31,11 +31,11 @@ class TicTacToeGame
             
             
 
-            Console.Write(sup.gameBoardPrint(gameBoard)); // Assuming gameBoardPrint method takes gameBoard as an argument
+            sup.GameBoardPrint(gameBoard); // Assuming gameBoardPrint method takes gameBoard as an argument
 
-            gameOver = sup.checkWinner(gameBoard); // Assuming checkWinner method takes gameBoard as an argument
+            gameOver = sup.CheckWinner(gameBoard); // Assuming checkWinner method takes gameBoard as an argument
 
-            if (sup.checkWinner(gameBoard))
+            if (sup.CheckWinner(gameBoard))
             {
                 gameOver = true;
                 Console.WriteLine($"Player {currentPlayer} wins!");
