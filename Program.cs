@@ -60,24 +60,39 @@ class TicTacToeGame
     {
         int across, down;
         bool validInput = false;
+        string userInput;
 
         while (!validInput)
         {
             Console.WriteLine("Where would you like to place your mark? Enter the corresponding coordinates:");
             Console.WriteLine("ex. 0,0  would place your mark at the top left and 2,2 would place your mark in the bottom right");
             Console.WriteLine("Please enter the horizontal coordinate: 0, 1, or 2");
-            across = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the vertical coordinate: 0, 1, or 2");
-            down = int.Parse(Console.ReadLine());
+            userInput = Console.ReadLine();
+            if (userInput.Length == 1 && int.TryParse(userInput, out int n1) && int.Parse(userInput) <= 2) {
+                across = int.Parse(userInput);
+                Console.WriteLine("Please enter the vertical coordinate: 0, 1, or 2");
+                userInput = Console.ReadLine();
+                if (userInput.Length == 1 && int.TryParse(userInput, out int n2) && int.Parse(userInput) <= 2) {
+                    down = int.Parse(userInput);
 
-            if (gameBoard[across, down] == ' ')
-            {
-                gameBoard[across, down] = currentPlayer;
-                validInput = true;
+                    if (gameBoard[across, down] == ' ')
+                    {
+                        gameBoard[across, down] = currentPlayer;
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("This position is already occupied. Please choose another position.");
+                    }
+                } 
+                else
+                {
+                    Console.WriteLine("Invalid Input! Please enter a single digit between 1 and 2");
+                }
             }
-            else
+            else 
             {
-                Console.WriteLine("This position is already occupied. Please choose another position.");
+                Console.WriteLine("Invalid Input! Please enter a single digit between 1 and 2");
             }
         }
     }
