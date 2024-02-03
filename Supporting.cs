@@ -26,7 +26,6 @@ namespace TicTacToeGroup13
             {
                 if (gameBoard[row, 0] == gameBoard[row, 1] && gameBoard[row, 1] == gameBoard[row, 2] && gameBoard[row, 0] != ' ')
                 {
-                    Console.WriteLine($"Player {gameBoard[row, 0]} wins!");
                     return true;
                 }
             }
@@ -36,7 +35,6 @@ namespace TicTacToeGroup13
             {
                 if (gameBoard[0, col] == gameBoard[1, col] && gameBoard[1, col] == gameBoard[2, col] && gameBoard[0, col] != ' ')
                 {
-                    Console.WriteLine($"Player {gameBoard[0, col]} wins!");
                     return true;
                 }
             }
@@ -44,13 +42,11 @@ namespace TicTacToeGroup13
             // Check diagonals
             if (gameBoard[0, 0] == gameBoard[1, 1] && gameBoard[1, 1] == gameBoard[2, 2] && gameBoard[0, 0] != ' ')
             {
-                Console.WriteLine($"Player {gameBoard[0, 0]} wins!");
                 return true;
             }
 
             if (gameBoard[0, 2] == gameBoard[1, 1] && gameBoard[1, 1] == gameBoard[2, 0] && gameBoard[0, 2] != ' ')
             {
-                Console.WriteLine($"Player {gameBoard[0, 2]} wins!");
                 return true;
             }
 

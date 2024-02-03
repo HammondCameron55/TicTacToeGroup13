@@ -51,9 +51,8 @@ class TicTacToeGame
                     currentPlayer = 'X';
                 }
             }
-
-            
         }
+        Console.ReadLine();
     }
 
     // Method to get player choice and update the game board
