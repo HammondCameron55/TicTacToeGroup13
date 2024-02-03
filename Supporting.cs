@@ -54,6 +54,23 @@ namespace TicTacToeGroup13
 
             return false;
         }
+
+        //Method to check if board is full
+        public bool IsBoardFull(char[,] gameBoard)
+        {
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    if (gameBoard[row, col] == ' ')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
     }
 }
 
